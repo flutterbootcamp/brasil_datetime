@@ -1,6 +1,6 @@
 name: brasil_datetime
-description: Extensões para DateTime em pt_BR
-version: 0.1.0
+description: Extensões para objetos DateTime em pt_BR
+version: 0.1.1
 homepage: https://github.com/flutterbootcamp/brasil_datetime
 
 environment:

@@ -5,32 +5,43 @@ import 'package:intl/intl.dart';
 
 const br = 'pt_BR';
 
+/// Extensões para objetos DateTime em pt_BR
 extension BrasilDateTime on DateTime {
   /// Retorna o dia.
+  ///
+  /// Ex: `22`
   String dia() {
     initializeDateFormatting();
     return DateFormat.d(br).format(this);
   }
 
   /// Retorna o dia da semana abreviado.
+  ///
+  /// Ex: `qua`
   String diaSemanaAbrev() {
     initializeDateFormatting();
     return DateFormat.E(br).format(this);
   }
 
   /// Retorna o dia da semana.
+  ///
+  /// Ex: `quarta-feira`
   String diaSemana() {
     initializeDateFormatting();
     return DateFormat.EEEE(br).format(this);
   }
 
   /// Retorna o nome do mês abreviado.
+  ///
+  /// Ex: `abr`
   String mesAbrev() {
     initializeDateFormatting();
     return DateFormat.LLL(br).format(this);
   }
 
   /// Retorna o nome do mês.
+  ///
+  /// Ex: `abril`
   String mes() {
     initializeDateFormatting();
     return DateFormat.LLLL(br).format(this);
@@ -42,39 +53,36 @@ extension BrasilDateTime on DateTime {
     return DateFormat.M(br).format(this);
   }
 
-  /// Retorna dia e mês no formato `22/04`.
+  /// Retorna dia e mês no formato `dd/mm`.
+  ///
+  /// Ex: `22/04`
   String diaMes() {
     initializeDateFormatting();
     return DateFormat.Md(br).format(this);
   }
 
-  /// Retorna dia da semana e mês no formato `qua, 22/04`.
+  /// Retorna dia da semana e mês no formato `[semana], dd/mm`.
+  ///
+  /// Ex: `qua, 22/04`
   String diaSemanaEMes() {
     initializeDateFormatting();
     return DateFormat.MEd(br).format(this);
   }
 
-  /// Retorna o nome do mês abreviado.
-  String mmm() {
-    initializeDateFormatting();
-    return DateFormat.MMM(br).format(this);
-  }
-
-  /// Retorna o dia da semana e mês no formato `qua, 22/04`.
+  /// Retorna o dia da semana e mês no formato `[dia] de [mes]`.
+  ///
+  /// Ex: `22 de abr`
   String diaMesAbrev() {
     initializeDateFormatting();
     return DateFormat.MMMd(br).format(this);
   }
 
-  /// Retorna dia, mês e ano no formato `22/04/1987`.
+  /// Retorna dia, mês e ano no formato `dd/mm/aaaa`.
+  ///
+  /// Ex: `22/04/1987`.
   String diaSemanaMesAbrev() {
     initializeDateFormatting();
     return DateFormat.MMMEd(br).format(this);
-  }
-
-  String mmmm() {
-    initializeDateFormatting();
-    return DateFormat.MMMM(br).format(this);
   }
 
   /// Retorna dia e mês por extenso no formato: `[dia] de [mes]`.

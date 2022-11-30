@@ -10,14 +10,12 @@ void main() {
   test('dia da semana abreviado', () => expect(data.diaSemanaAbrev(), 'qua'));
   test('mês', () => expect(data.mes(), 'abril'));
   test('mês abreviado', () => expect(data.mesAbrev(), 'abr'));
-  test('mes no ano', () => expect(data.mesNoAno(), '4'));
+  test('mês no ano', () => expect(data.mesNoAno(), '4'));
   test('dia e mês', () => expect(data.diaMes(), '22/4'));
-  test('mês abreviado (MMM)', () => expect(data.mmm(), 'abr'));
   test('dia e mês abreviado', () => expect(data.diaMesAbrev(), '22 de abr'));
   test('dia da semana e mês abreviado',
       () => expect(data.diaSemanaMesAbrev(), 'qua, 22 de abr'));
   test('dia da semana e mês', () => expect(data.diaSemanaEMes(), 'qua, 22/04'));
-  test('mês (MMMM)', () => expect(data.mmmm(), 'abril'));
   test('dia e mês', () => expect(data.diaMesExt(), '22 de abril'));
   test('mês (MMMM)',
       () => expect(data.diaSemanaMesExt(), 'quarta-feira, 22 de abril'));
