@@ -6,32 +6,7 @@ Extensões para `DateTime` em pt_BR.
 
 Este package facilita a manipulação de objetos `DateTime` de acordo com o padrão e formatos brasileiros.
 
-### Instalação
-
-#### Dependência
-
-Insira a dependência do pacote, executando o comando: 
-
-`flutter pub add brasil_datetime`
-
-A opção acima é a recomendada, pois cria dependência dentro no formato adequado, e em seguida executa o comando para baixar o pacote automaticamente.
-
-Se preferir 'fazer na mão', adicione a linha a seguir no seu arquivo pubspec.yaml
-
-```yaml
-dependencies:
-  brasil_datetime: 0.1.0
-```
-
-Em seguida, execute o comando `flutter pub get` manualmente para baixar o pacote.
-
-#### Importação
-
-No seu código Dart, faça a importação usando no cabeçalho a diretriz:
-
-`import 'package:brasil_datetime/brasil_datetime.dart';`
-
-### Extensões
+## Extensões
 
 Para qualquer objeto `DateTime`, as extensões abaixos estão disponíveis:
 
@@ -66,11 +41,7 @@ data.semanaDiaMesAnoExt();       // quarta-feira, 22 de abril de 1987
 data.trimestreAnoAbrev();        // T2 de 1987
 data.hora();                     // 23
 data.horaMinuto();               // 23:37
-data.minuto();                   // 23:37:06
-data.segundo();                  // 23:37:06
+data.minuto();                   // 37
+data.segundo();                  // 6
 data.minutoSegundo();            // 37:06
 ```
-
-
-
-

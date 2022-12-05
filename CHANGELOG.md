@@ -1,3 +1,8 @@
+## 0.1.2
+
+- Melhorias no README
+- dart analyze && github actions
+
 ## 0.1.1
 
 - pub.dev score
