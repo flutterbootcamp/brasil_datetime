@@ -47,10 +47,6 @@ jobs:
       - name: Format collected coverage to LCOV
         run: dart pub global run coverage:format_coverage --packages=.dart_tool/package_config.json --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
         
-      # Generate LCOV report  
-      - name: Generate LCOV report
-        run: genhtml -o ./coverage/report ./coverage/lcov.info
-        
       # Run Codecov
       - name: Codecov
         uses: codecov/codecov-action@v3.1.1
