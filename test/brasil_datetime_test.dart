@@ -1,5 +1,5 @@
 import 'package:brasil_datetime/brasil_datetime.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 final data = DateTime(1987, 4, 22, 23, 37, 06);
 
