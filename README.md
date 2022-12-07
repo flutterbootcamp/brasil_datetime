@@ -7,7 +7,7 @@ Extensões para `DateTime` em pt_BR.
 
 ## Apresentação
 
-Este package facilita a manipulação de objetos `DateTime` de acordo com o padrão e formatos brasileiros.
+Este package facilita a manipulação de objetos `DateTime` de acordo com o padrão e formato brasileiro.
 
 ## Extensões
 
@@ -18,6 +18,7 @@ Para qualquer objeto `DateTime`, as extensões abaixos estão disponíveis:
 final data = DateTime(1987, 4, 22, 23, 37, 06);
 
 data.diaMesAno();                // 22/04/1987
+data.diaMesAnoHoraMinuto();      // 22/04/1987 23:37
 data.dia();                      // 22
 data.diaSemana();                // quarta-feira
 data.diaSemanaAbrev();           // qua

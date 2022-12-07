@@ -1,3 +1,7 @@
+## 0.1.3
+
+- diaMesAnoHoraMinuto
+
 ## 0.1.2
 
 - Melhorias no README

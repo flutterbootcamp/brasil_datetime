@@ -4,6 +4,7 @@ final data = DateTime(1987, 4, 22, 23, 37, 06);
 
 void main() {
   data.diaMesAno(); // 22/04/1987
+  data.diaMesAnoHoraMinuto(); // 22/04/1987 23:37
   data.dia(); // 22
   data.diaSemana(); // quarta-feira
   data.diaSemanaAbrev(); // qua

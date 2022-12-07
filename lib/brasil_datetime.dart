@@ -1,5 +1,7 @@
 library brasil_datetime;
 
+import 'dart:io';
+
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
@@ -259,5 +261,13 @@ extension BrasilDateTime on DateTime {
   String minutoSegundo() {
     initializeDateFormatting();
     return DateFormat.ms(br).format(this);
+  }
+
+  /// Retorna dia, mes, ano, hora e minuto.
+  ///
+  /// Ex: `22/04/1987 23:37`
+  String diaMesAnoHoraMinuto() {
+    initializeDateFormatting();
+    return DateFormat.yMd(br).add_Hm().format(this);
   }
 }

@@ -60,4 +60,6 @@ void main() {
   test('minuto', () => expect(data.minuto(), '37'));
   test('segundo', () => expect(data.segundo(), '6'));
   test('minuto e segundo', () => expect(data.minutoSegundo(), '37:06'));
+  test('dia, mes, ano, hora e minuto',
+      () => expect(data.diaMesAnoHoraMinuto(), '22/04/1987 23:37'));
 }
