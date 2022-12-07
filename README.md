@@ -5,6 +5,8 @@ Extensões para `DateTime` em pt_BR.
 
 ![Codecov](https://img.shields.io/codecov/c/github/flutterbootcamp/brasil_datetime)
 
+[![Dart](https://github.com/flutterbootcamp/brasil_datetime/actions/workflows/dart.yml/badge.svg)](https://github.com/flutterbootcamp/brasil_datetime/actions/workflows/dart.yml)
+
 ## Apresentação
 
 Este package facilita a manipulação de objetos `DateTime` de acordo com o padrão e formato brasileiro.
