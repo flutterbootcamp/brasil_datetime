@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Melhorias na descrição.
+
 ## 0.1.3
 
 - diaMesAnoHoraMinuto

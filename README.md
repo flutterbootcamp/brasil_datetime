@@ -1,7 +1,7 @@
 
 # brasil_datetime
 
-Extensões para `DateTime` em pt_BR.
+Extensões para a classe `DateTime` para facilitar a formatação em pt_BR.
 
 ![Codecov](https://img.shields.io/codecov/c/github/flutterbootcamp/brasil_datetime)
 
