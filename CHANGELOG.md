@@ -1,3 +1,7 @@
+## 0.2.0
+
+- Atualiza `intl`.
+
 ## 0.1.4
 
 - Melhorias na descrição.
