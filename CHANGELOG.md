@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Corrige abreviações.
+
 ## 0.2.0
 
 - Atualiza `intl`.

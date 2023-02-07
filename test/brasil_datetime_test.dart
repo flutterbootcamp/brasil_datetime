@@ -7,15 +7,16 @@ void main() {
   test('dia, mês e ano', () => expect(data.diaMesAno(), '22/04/1987'));
   test('dia', () => expect(data.dia(), '22'));
   test('dia da semana', () => expect(data.diaSemana(), 'quarta-feira'));
-  test('dia da semana abreviado', () => expect(data.diaSemanaAbrev(), 'qua'));
+  test('dia da semana abreviado', () => expect(data.diaSemanaAbrev(), 'qua.'));
   test('mês', () => expect(data.mes(), 'abril'));
-  test('mês abreviado', () => expect(data.mesAbrev(), 'abr'));
+  test('mês abreviado', () => expect(data.mesAbrev(), 'abr.'));
   test('mês no ano', () => expect(data.mesNoAno(), '4'));
   test('dia e mês', () => expect(data.diaMes(), '22/4'));
-  test('dia e mês abreviado', () => expect(data.diaMesAbrev(), '22 de abr'));
+  test('dia e mês abreviado', () => expect(data.diaMesAbrev(), '22 de abr.'));
   test('dia da semana e mês abreviado',
-      () => expect(data.diaSemanaMesAbrev(), 'qua, 22 de abr'));
-  test('dia da semana e mês', () => expect(data.diaSemanaEMes(), 'qua, 22/04'));
+      () => expect(data.diaSemanaMesAbrev(), 'qua., 22 de abr.'));
+  test(
+      'dia da semana e mês', () => expect(data.diaSemanaEMes(), 'qua., 22/04'));
   test('dia e mês', () => expect(data.diaMesExt(), '22 de abril'));
   test('mês (MMMM)',
       () => expect(data.diaSemanaMesExt(), 'quarta-feira, 22 de abril'));
@@ -25,14 +26,14 @@ void main() {
   test('ano', () => expect(data.ano(), '1987'));
   test('ano e mês', () => expect(data.anoMes(), '04/1987'));
   test('semana, dia, mês e ano abreviado',
-      () => expect(data.semanaDiaMesAnoAbrev(), 'qua, 22/04/1987'));
-  test('mês e ano abreviado', () => expect(data.mesAnoAbrev(), 'abr de 1987'));
+      () => expect(data.semanaDiaMesAnoAbrev(), 'qua., 22/04/1987'));
+  test('mês e ano abreviado', () => expect(data.mesAnoAbrev(), 'abr. de 1987'));
 
   test('dia, mês e ano abreviado',
-      () => expect(data.diaMesAnoAbrev(), '22 de abr de 1987'));
+      () => expect(data.diaMesAnoAbrev(), '22 de abr. de 1987'));
 
   test('semana, dia, mês e ano por extenso abreviado',
-      () => expect(data.semanaDiaMesAnoExtAbrev(), 'qua, 22 de abr de 1987'));
+      () => expect(data.semanaDiaMesAnoExtAbrev(), 'qua., 22 de abr. de 1987'));
 
   test(
       'mês e ano por extenso', () => expect(data.mesAnoExt(), 'abril de 1987'));

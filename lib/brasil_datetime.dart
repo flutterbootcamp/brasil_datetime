@@ -17,7 +17,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna o dia da semana abreviado.
   ///
-  /// Ex: `qua`
+  /// Ex: `qua.`
   String diaSemanaAbrev() {
     initializeDateFormatting();
     return DateFormat.E(br).format(this);
@@ -33,7 +33,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna o nome do mês abreviado.
   ///
-  /// Ex: `abr`
+  /// Ex: `abr.`
   String mesAbrev() {
     initializeDateFormatting();
     return DateFormat.LLL(br).format(this);
@@ -63,7 +63,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna dia da semana e mês no formato `[semana], dd/mm`.
   ///
-  /// Ex: `qua, 22/04`
+  /// Ex: `qua., 22/04`
   String diaSemanaEMes() {
     initializeDateFormatting();
     return DateFormat.MEd(br).format(this);
@@ -71,7 +71,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna o dia da semana e mês no formato `[dia] de [mes]`.
   ///
-  /// Ex: `22 de abr`
+  /// Ex: `22 de abr.`
   String diaMesAbrev() {
     initializeDateFormatting();
     return DateFormat.MMMd(br).format(this);
@@ -143,7 +143,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna dia da semana, mês e ano no formato `[semana], dd/mm/aaaa`.
   ///
-  /// Ex: `qua, 22/04/1987`
+  /// Ex: `qua., 22/04/1987`
   String semanaDiaMesAnoAbrev() {
     initializeDateFormatting();
     return DateFormat.yMEd(br).format(this);
@@ -151,7 +151,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna mês e ano no formato `[mes] de [aaaa]`.
   ///
-  /// Ex: `abr de 1987`
+  /// Ex: `abr. de 1987`
   String mesAnoAbrev() {
     initializeDateFormatting();
     return DateFormat.yMMM(br).format(this);
@@ -159,7 +159,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna dia, mês e ano no formato `[dia] de [mes] de [ano]`.
   ///
-  /// Ex: `22 de abr de 1987`
+  /// Ex: `22 de abr. de 1987`
   String diaMesAnoAbrev() {
     initializeDateFormatting();
     return DateFormat.yMMMd(br).format(this);
@@ -167,7 +167,7 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna dia, mês e ano por extenso e abreviado no formato `[semana, [dia] de [mes] de [ano]`.
   ///
-  /// Ex: `qua, 22 de abr de 1987`
+  /// Ex: `qua., 22 de abr. de 1987`
   String semanaDiaMesAnoExtAbrev() {
     initializeDateFormatting();
     return DateFormat.yMMMEd(br).format(this);
