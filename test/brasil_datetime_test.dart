@@ -11,7 +11,7 @@ void main() {
   test('mês', () => expect(data.mes(), 'abril'));
   test('mês abreviado', () => expect(data.mesAbrev(), 'abr.'));
   test('mês no ano', () => expect(data.mesNoAno(), '4'));
-  test('dia e mês', () => expect(data.diaMes(), '22/4'));
+  test('dia e mês', () => expect(data.diaMes(), '22/04'));
   test('dia e mês abreviado', () => expect(data.diaMesAbrev(), '22 de abr.'));
   test('dia da semana e mês abreviado',
       () => expect(data.diaSemanaMesAbrev(), 'qua., 22 de abr.'));
