@@ -51,3 +51,10 @@ data.minuto();                   // 37
 data.segundo();                  // 6
 data.minutoSegundo();            // 37:06
 ```
+---
+
+<a href="https://github.com/flutterbootcamp/brasil_datetime/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=flutterbootcamp/brasil_datetime" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).

@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Adiciona contrib.rocks.
+
 ## 0.2.1
 
 - Corrige abreviações.
