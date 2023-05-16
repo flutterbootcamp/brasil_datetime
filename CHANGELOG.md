@@ -1,3 +1,7 @@
+## 0.3.0
+
+- sdk: ">=3.0.0" e intl: 0.18.1.
+
 ## 0.2.2
 
 - Adiciona contrib.rocks.
