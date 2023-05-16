@@ -1,6 +1,6 @@
 name: brasil_datetime
 description: Extensões para a classe DateTime para facilitar a formatação em pt_BR
-version: 0.3.0
+version: 0.3.1
 homepage: https://github.com/flutterbootcamp/brasil_datetime
 repository: https://github.com/flutterbootcamp/brasil_datetime
 issue_tracker: https://github.com/flutterbootcamp/brasil_datetime/issues
@@ -9,7 +9,7 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  intl: ^0.18.1
+  intl: ^0.18.0
 
 dev_dependencies:
   lints: ^2.1.0
