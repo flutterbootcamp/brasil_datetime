@@ -1,5 +1,11 @@
 ## 0.3.4
 
+- flutter_lints: ^6.0.0
+- intl: ^0.20.2
+- test: 1.26.3
+
+## 0.3.4
+
 - flutter_lints: ^5.0.0
 - intl: ^0.20.1
 
