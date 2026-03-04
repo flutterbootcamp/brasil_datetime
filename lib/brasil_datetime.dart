@@ -27,11 +27,32 @@ void _garantirInicializacao() {
   }
 }
 
-/// Extensões para objetos DateTime em pt_BR.
+/// Extensões para objetos [DateTime] que facilitam a formatação de data e hora
+/// para o formato brasileiro (pt_BR).
+///
+/// Para utilizar, basta importar a biblioteca e chamar os métodos em uma instância
+/// de `DateTime`.
+///
+/// Exemplo:
+/// ```dart
+/// import 'package:brasil_datetime/brasil_datetime.dart';
+///
+/// void main() {
+///   final agora = DateTime.now();
+///   print(agora.dia()); // Exibe o dia do mês.
+///   print(agora.mes()); // Exibe o nome do mês por extenso.
+/// }
+/// ```
 extension BrasilDateTime on DateTime {
-  /// Retorna o dia.
+  /// Retorna o dia do mês como uma `String`.
   ///
-  /// Ex: `22`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 10, 22);
+  /// print(data.dia()); // '22'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String dia() {
     _garantirInicializacao();
     return DateFormat.d(_locale).format(this);
@@ -39,15 +60,27 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna o dia da semana abreviado.
   ///
-  /// Ex: `qua.`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 10, 25); // Uma quarta-feira
+  /// print(data.diaSemanaAbrev()); // 'qua.'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaSemanaAbrev() {
     _garantirInicializacao();
     return DateFormat.E(_locale).format(this);
   }
 
-  /// Retorna o dia da semana.
+  /// Retorna o nome completo do dia da semana.
   ///
-  /// Ex: `quarta-feira`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 10, 25); // Uma quarta-feira
+  /// print(data.diaSemana()); // 'quarta-feira'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaSemana() {
     _garantirInicializacao();
     return DateFormat.EEEE(_locale).format(this);
@@ -55,237 +88,445 @@ extension BrasilDateTime on DateTime {
 
   /// Retorna o nome do mês abreviado.
   ///
-  /// Ex: `abr.`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22);
+  /// print(data.mesAbrev()); // 'abr.'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String mesAbrev() {
     _garantirInicializacao();
     return DateFormat.LLL(_locale).format(this);
   }
 
-  /// Retorna o nome do mês.
+  /// Retorna o nome completo do mês.
   ///
-  /// Ex: `abril`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22);
+  /// print(data.mes()); // 'abril'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String mes() {
     _garantirInicializacao();
     return DateFormat.LLLL(_locale).format(this);
   }
 
-  /// Retorna `1` até `12` de acordo com o mês do ano.
+  /// Retorna o número do mês no ano (de `1` a `12`).
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22);
+  /// print(data.mesNoAno()); // '4'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String mesNoAno() {
     _garantirInicializacao();
     return DateFormat.M(_locale).format(this);
   }
 
-  /// Retorna dia e mês no formato `dd/mm`.
+  /// Retorna o dia e o mês no formato `dd/MM`.
   ///
-  /// Ex: `22/04`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22);
+  /// print(data.diaMes()); // '22/04'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMes() {
     _garantirInicializacao();
     return DateFormat.Md(_locale).format(this);
   }
 
-  /// Retorna dia da semana e mês no formato `[semana], dd/mm`.
+  /// Retorna o dia da semana abreviado e o mês no formato `[semana], dd/MM`.
   ///
-  /// Ex: `qua., 22/04`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22); // Um sábado
+  /// print(data.diaSemanaEMes()); // 'sáb., 22/04'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaSemanaEMes() {
     _garantirInicializacao();
     return DateFormat.MEd(_locale).format(this);
   }
 
-  /// Retorna o dia e mês abreviado no formato `[dia] de [mes]`.
+  /// Retorna o dia e o mês abreviado no formato `dd 'de' MMM`.
   ///
-  /// Ex: `22 de abr.`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22);
+  /// print(data.diaMesAbrev()); // '22 de abr.'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMesAbrev() {
     _garantirInicializacao();
     return DateFormat.MMMd(_locale).format(this);
   }
 
-  /// Retorna dia da semana e mês abreviado no formato `[semana], [dia] de [mes]`.
+  /// Retorna o dia da semana abreviado, o dia do mês e o mês abreviado.
   ///
-  /// Ex: `qua., 22 de abr.`
+  /// Formato: `EEE, dd 'de' MMM`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22); // Um sábado
+  /// print(data.diaSemanaMesAbrev()); // 'sáb., 22 de abr.'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaSemanaMesAbrev() {
     _garantirInicializacao();
     return DateFormat.MMMEd(_locale).format(this);
   }
 
-  /// Retorna dia e mês por extenso no formato: `[dia] de [mes]`.
+  /// Retorna o dia e o mês por extenso no formato `d 'de' MMMM`.
   ///
-  /// Ex: `22 de abril`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22);
+  /// print(data.diaMesExt()); // '22 de abril'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMesExt() {
     _garantirInicializacao();
     return DateFormat.MMMMd(_locale).format(this);
   }
 
-  /// Retorna dia da semana e mês por extenso no formato: `[semana], [dia] de [mes]`.
+  /// Retorna o dia da semana e o mês por extenso.
   ///
-  /// Ex: `quarta-feira, 22 de abril`
+  /// Formato: `EEEE, d 'de' MMMM`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22); // Um sábado
+  /// print(data.diaSemanaMesExt()); // 'sábado, 22 de abril'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaSemanaMesExt() {
     _garantirInicializacao();
     return DateFormat.MMMMEEEEd(_locale).format(this);
   }
 
-  /// Retorna de `1` a `4` de acordo com o trimestre no formato: `T[trimestre]`.
+  /// Retorna o trimestre do ano de forma abreviada (`T1`, `T2`, `T3`, `T4`).
   ///
-  /// Ex: `T2`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22); // Mês 4, segundo trimestre
+  /// print(data.trimestreAbrev()); // 'T2'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String trimestreAbrev() {
     _garantirInicializacao();
     return DateFormat.QQQ(_locale).format(this);
   }
 
-  /// Retorna o trimestre por extenso.
+  /// Retorna o trimestre do ano por extenso.
   ///
-  /// Ex: `2º trimestre`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 4, 22); // Mês 4, segundo trimestre
+  /// print(data.trimestre()); // '2º trimestre'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String trimestre() {
     _garantirInicializacao();
     return DateFormat.QQQQ(_locale).format(this);
   }
 
-  /// Retorna ano.
+  /// Retorna o ano no formato `yyyy`.
   ///
-  /// Ex: `1987`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.ano()); // '1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String ano() {
     _garantirInicializacao();
     return DateFormat.y(_locale).format(this);
   }
 
-  /// Retorna mês e ano no formato `mm/aaaa`.
+  /// Retorna o mês e o ano no formato `MM/yyyy`.
   ///
-  /// Ex: `04/1987`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.anoMes()); // '04/1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String anoMes() {
     _garantirInicializacao();
     return DateFormat.yM(_locale).format(this);
   }
 
-  /// Retorna dia, mês e ano no formato `dd/mm/aaaa`.
+  /// Retorna a data completa no formato `dd/MM/yyyy`.
   ///
-  /// Ex: `22/04/1987`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.diaMesAno()); // '22/04/1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMesAno() {
     _garantirInicializacao();
     return DateFormat.yMd(_locale).format(this);
   }
 
-  /// Retorna dia da semana, mês e ano no formato `[semana], dd/mm/aaaa`.
+  /// Retorna a data com o dia da semana abreviado.
   ///
-  /// Ex: `qua., 22/04/1987`
+  /// Formato: `EEE, dd/MM/yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22); // Uma quarta-feira
+  /// print(data.semanaDiaMesAnoAbrev()); // 'qua., 22/04/1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String semanaDiaMesAnoAbrev() {
     _garantirInicializacao();
     return DateFormat.yMEd(_locale).format(this);
   }
 
-  /// Retorna mês e ano no formato `[mes] de [aaaa]`.
+  /// Retorna o mês abreviado e o ano.
   ///
-  /// Ex: `abr. de 1987`
+  /// Formato: `MMM 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.mesAnoAbrev()); // 'abr. de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String mesAnoAbrev() {
     _garantirInicializacao();
     return DateFormat.yMMM(_locale).format(this);
   }
 
-  /// Retorna dia, mês e ano no formato `[dia] de [mes] de [ano]`.
+  /// Retorna a data com o mês abreviado.
   ///
-  /// Ex: `22 de abr. de 1987`
+  /// Formato: `dd 'de' MMM 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.diaMesAnoAbrev()); // '22 de abr. de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMesAnoAbrev() {
     _garantirInicializacao();
     return DateFormat.yMMMd(_locale).format(this);
   }
 
-  /// Retorna dia da semana, dia, mês e ano abreviado no formato `[semana], [dia] de [mes] de [ano]`.
+  /// Retorna a data completa com o dia da semana e o mês abreviados.
   ///
-  /// Ex: `qua., 22 de abr. de 1987`
+  /// Formato: `EEE, dd 'de' MMM 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22); // Uma quarta-feira
+  /// print(data.semanaDiaMesAnoExtAbrev()); // 'qua., 22 de abr. de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String semanaDiaMesAnoExtAbrev() {
     _garantirInicializacao();
     return DateFormat.yMMMEd(_locale).format(this);
   }
 
-  /// Retorna mês e ano por extenso no formato `[mes] de [ano]`.
+  /// Retorna o mês por extenso e o ano.
   ///
-  /// Ex: `abril de 1987`
+  /// Formato: `MMMM 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.mesAnoExt()); // 'abril de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String mesAnoExt() {
     _garantirInicializacao();
     return DateFormat.yMMMM(_locale).format(this);
   }
 
-  /// Retorna dia, mês e ano por extenso no formato `[dia] de [mes] de [ano]`.
+  /// Retorna a data com o mês por extenso.
   ///
-  /// Ex: `22 de abril de 1987`
+  /// Formato: `d 'de' MMMM 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22);
+  /// print(data.diaMesAnoExt()); // '22 de abril de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMesAnoExt() {
     _garantirInicializacao();
     return DateFormat.yMMMMd(_locale).format(this);
   }
 
-  /// Retorna dia da semana, dia, mês e ano por extenso no formato `[semana], [dia] de [mes] de [ano]`.
+  /// Retorna a data completa por extenso.
   ///
-  /// Ex: `quarta-feira, 22 de abril de 1987`
+  /// Formato: `EEEE, d 'de' MMMM 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22); // Uma quarta-feira
+  /// print(data.semanaDiaMesAnoExt()); // 'quarta-feira, 22 de abril de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String semanaDiaMesAnoExt() {
     _garantirInicializacao();
     return DateFormat.yMMMMEEEEd(_locale).format(this);
   }
 
-  /// Retorna trimestre e ano abreviado no formato `T[trimestre] de [ano]`.
+  /// Retorna o trimestre abreviado e o ano.
   ///
-  /// Ex: `T2 de 1987`
+  /// Formato: `QQQ 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22); // Segundo trimestre
+  /// print(data.trimestreAnoAbrev()); // 'T2 de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String trimestreAnoAbrev() {
     _garantirInicializacao();
     return DateFormat.yQQQ(_locale).format(this);
   }
 
-  /// Retorna trimestre e ano por extenso no formato `[trimestre]º trimestre de [ano]`.
+  /// Retorna o trimestre por extenso e o ano.
   ///
-  /// Ex: `2º trimestre de 1987`
+  /// Formato: `QQQQ 'de' yyyy`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22); // Segundo trimestre
+  /// print(data.trimestreAnoExt()); // '2º trimestre de 1987'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String trimestreAnoExt() {
     _garantirInicializacao();
     return DateFormat.yQQQQ(_locale).format(this);
   }
 
-  /// Retorna hora (24h).
+  /// Retorna a hora no formato 24h (`HH`).
   ///
-  /// Ex: `23`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 1, 1, 23, 37);
+  /// print(data.hora()); // '23'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String hora() {
     _garantirInicializacao();
     return DateFormat.H(_locale).format(this);
   }
 
-  /// Retorna hora e minuto (24h).
+  /// Retorna a hora e os minutos no formato 24h (`HH:mm`).
   ///
-  /// Ex: `23:37`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 1, 1, 23, 37);
+  /// print(data.horaMinuto()); // '23:37'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String horaMinuto() {
     _garantirInicializacao();
     return DateFormat.Hm(_locale).format(this);
   }
 
-  /// Retorna hora, minuto e segundo (24h).
+  /// Retorna a hora, os minutos e os segundos no formato 24h (`HH:mm:ss`).
   ///
-  /// Ex: `23:37:06`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 1, 1, 23, 37, 06);
+  /// print(data.horaMinutoSegundo()); // '23:37:06'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String horaMinutoSegundo() {
     _garantirInicializacao();
     return DateFormat.Hms(_locale).format(this);
   }
 
-  /// Retorna minuto.
+  /// Retorna os minutos da hora.
   ///
-  /// Ex: `37`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 1, 1, 23, 37);
+  /// print(data.minuto()); // '37'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String minuto() {
     _garantirInicializacao();
     return DateFormat.m(_locale).format(this);
   }
 
-  /// Retorna segundo.
+  /// Retorna os segundos do minuto.
   ///
-  /// Ex: `6`
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 1, 1, 23, 37, 06);
+  /// print(data.segundo()); // '6'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String segundo() {
     _garantirInicializacao();
     return DateFormat.s(_locale).format(this);
   }
 
-  /// Retorna minuto e segundo (24h).
+  /// Retorna os minutos e os segundos.
   ///
-  /// Ex: `37:06`
+  /// Formato: `mm:ss`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(2023, 1, 1, 23, 37, 06);
+  /// print(data.minutoSegundo()); // '37:06'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String minutoSegundo() {
     _garantirInicializacao();
     return DateFormat.ms(_locale).format(this);
   }
 
-  /// Retorna dia, mes, ano, hora e minuto.
+  /// Retorna a data e a hora completas.
   ///
-  /// Ex: `22/04/1987 23:37`
+  /// Formato: `dd/MM/yyyy HH:mm`.
+  ///
+  /// Exemplo:
+  /// ```dart
+  /// final data = DateTime(1987, 4, 22, 23, 37);
+  /// print(data.diaMesAnoHoraMinuto()); // '22/04/1987 23:37'
+  /// ```
+  ///
+  /// O valor retornado é uma `String`.
   String diaMesAnoHoraMinuto() {
     _garantirInicializacao();
     return DateFormat.yMd(_locale).add_Hm().format(this);
