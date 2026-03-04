@@ -1,8 +1,21 @@
-## 0.3.4
+## 0.4.0
+
+- Otimiza inicialização do `initializeDateFormatting`, executando apenas uma vez.
+- Constante `br` renomeada para `_locale` (privada).
+- Adiciona função pública `inicializar()` para inicialização antecipada.
+- Corrige docstrings inconsistentes.
+- Atualiza `lints: ^6.1.0` e `test: ^1.30.0`.
+- Renomeia `flutter_lints` para `lints`.
+- Atualiza GitHub Actions para versões mais recentes.
+- Adiciona `topics` no `pubspec.yaml`.
+- Adiciona linting rules mais rígidas.
+- Melhoria nos testes com `group` e casos de borda.
+
+## 0.3.5
 
 - flutter_lints: ^6.0.0
 - intl: ^0.20.2
-- test: 1.26.3
+- test: ^1.26.3
 
 ## 0.3.4
 
