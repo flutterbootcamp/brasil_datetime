@@ -67,21 +67,6 @@ data.segundo();                  // 6
 data.minutoSegundo();            // 37:06
 ```
 
-## Como Usar
-
-As extensões estão disponíveis diretamente em qualquer objeto `DateTime`.
-
-```dart
-void main() {
-  final agora = DateTime.now();
-
-  // Exemplo de uso
-  print('Data completa: ${agora.diaMesAno()}'); // Saída: 25/10/2023
-  print('Dia por extenso: ${agora.diaSemana()}'); // Saída: quarta-feira
-  print('Mês por extenso: ${agora.mesExt()}'); // Saída: outubro
-}
-```
-
 ## Extensões Disponíveis
 
 Abaixo estão todas as extensões disponíveis para formatação.
