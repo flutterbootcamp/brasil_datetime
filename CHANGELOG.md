@@ -1,3 +1,7 @@
+## [Unreleased]
+
+- Atualiza `actions/checkout` para v5 e fixa o runner do CI no Ubuntu 24.04.
+
 ## 0.4.0
 
 - Otimiza inicialização do `initializeDateFormatting`, executando apenas uma vez.
