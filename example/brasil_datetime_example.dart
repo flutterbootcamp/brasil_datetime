@@ -24,6 +24,9 @@ void main() {
     ..writeln(data.anoMes()) // 04/1987
     ..writeln(data.diaMesAno()) // 22/04/1987
     ..writeln(data.diaMesAnoHoraMinuto()) // 22/04/1987 23:37
+    ..writeln(
+      data.diaMesAnoHoraMinutoSegundo(),
+    ) // 22/04/1987 23:37:06
     ..writeln(data.semanaDiaMesAnoAbrev()) // qua., 22/04/1987
     ..writeln(data.mesAnoAbrev()) // abr. de 1987
     ..writeln(data.diaMesAnoAbrev()) // 22 de abr. de 1987

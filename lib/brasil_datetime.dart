@@ -531,4 +531,14 @@ extension BrasilDateTime on DateTime {
     _garantirInicializacao();
     return DateFormat.yMd(_locale).add_Hm().format(this);
   }
+
+  /// Retorna a data e a hora completas, incluindo os segundos.
+  ///
+  /// Formato: `dd/MM/yyyy HH:mm:ss`.
+  ///
+  /// Ex: `22/04/1987 23:37:06`.
+  String diaMesAnoHoraMinutoSegundo() {
+    _garantirInicializacao();
+    return DateFormat.yMd(_locale).add_Hms().format(this);
+  }
 }

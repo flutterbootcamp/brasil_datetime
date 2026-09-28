@@ -120,6 +120,13 @@ void main() {
       'dia, mês, ano, hora e minuto',
       () => expect(data.diaMesAnoHoraMinuto(), '22/04/1987 23:37'),
     );
+    test(
+      'dia, mês, ano, hora, minuto e segundo',
+      () => expect(
+        data.diaMesAnoHoraMinutoSegundo(),
+        '22/04/1987 23:37:06',
+      ),
+    );
   });
 
   group('Datas diferentes', () {
@@ -210,5 +217,12 @@ void main() {
     test('minuto e segundo', () => expect(data2.minutoSegundo(), '09:04'));
     test('dia, mes, ano, hora e minuto',
         () => expect(data2.diaMesAnoHoraMinuto(), '05/01/2024 08:09'));
+    test(
+      'dia, mes, ano, hora, minuto e segundo',
+      () => expect(
+        data2.diaMesAnoHoraMinutoSegundo(),
+        '05/01/2024 08:09:04',
+      ),
+    );
   });
 }

@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- Adiciona `diaMesAnoHoraMinutoSegundo()` para formatar data e hora com segundos.
 - Atualiza `actions/checkout` para v5 e fixa o runner do CI no Ubuntu 24.04.
 
 ## 0.4.0
