@@ -50,6 +50,7 @@ data.ano();                      // 1987
 data.anoMes();                   // 04/1987
 data.diaMesAno();                // 22/04/1987
 data.diaMesAnoHoraMinuto();      // 22/04/1987 23:37
+data.diaMesAnoHoraMinutoSegundo(); // 22/04/1987 23:37:06
 data.semanaDiaMesAnoAbrev();     // qua., 22/04/1987
 data.mesAnoAbrev();              // abr. de 1987
 data.diaMesAnoAbrev();           // 22 de abr. de 1987
